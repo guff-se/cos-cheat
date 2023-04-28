@@ -1,1 +1,51 @@
-<h1>The Nested Cosine Cheat Sheet!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Nested Cosine Cheat Sheet!</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="sketch.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>The Nested Cosine Cheat Sheet!</h1>
+    <div id="curves-container" class="curves-container"></div>
+  </div>
+    
+  <script>
+    const curve1 = {
+      func: (t, x) => Math.cos(t),
+      text: 'y = cos(t)',
+      description: 'A straight line oscillating up and down over time in a cosine movement.'
+    };
+    const curve2 = {
+      func: (t, x) => Math.cos(t + x),
+      text: 'y = cos(t + x)',
+      description: 'A cosine curve that moves horizontally over time.'
+    };
+    const curve3 = {
+      func: (t, x) => Math.cos(Math.cos(t) + x),
+      text: 'y = cos(cos(t) + x)',
+      description: 'A cosine curve that accelerates and decelerates horizontally over time.'
+    };
+    const curve4 = {
+      func: (t, x) => Math.cos(t + Math.cos(x)),
+      text: 'y = cos(t + cos(x))',
+      description: 'A cosine curve that moves vertically over time while retaining its shape.'
+    };
+    const curve5 = {
+      func: (t, x) => Math.cos(t+ Math.cos(t)*x),
+      text: 'y = cos(t + cos(t) * x)',
+      description: 'A complex waveform that evolves over time, with a varying frequency and amplitude.'
+    };
+    const curve6 = {
+      func: (t, x) => Math.cos(+ x * (1 + 1 * Math.cos(0.5 * x + t))),
+      text: 'y = cos(x * (1 + 1 * cos(0.5 * x + t)))',
+      description: 'A cosine curve with a time-varying wavelength that repeats over the x-axis.'
+    };
+
+    const curves = [curve1, curve2, curve3, curve4, curve5, curve6];
+  </script>
+</body>
+</html>
