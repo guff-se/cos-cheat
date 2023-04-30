@@ -1,51 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Nested Cosine Cheat Sheet!</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="sketch.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Nested Cosine Cheat Sheet!</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="sketch.js" defer></script>
 </head>
 <body>
   <div class="container">
     <h1>The Nested Cosine Cheat Sheet!</h1>
-    <div id="curves-container" class="curves-container"></div>
+    <h2>Explore the beauty of nested cosine functions</h2>
+    <p>
+      This interactive cheat sheet showcases a collection of nested cosine functions and their visualizations.
+      Nested cosine functions exhibit fascinating and complex patterns, making them a topic of interest for mathematicians, programmers, and enthusiasts alike.
+    </p>
+    <p>
+      Hover over each curve to reveal a description and the formula used to generate it.
+      Feel free to use these visualizations as a learning resource or as a source of inspiration for your own projects.
+    </p>
+    <div class="form-controls">
+      <label for="custom-function">Function:</label>
+      <input type="text" id="custom-function" class="custom-function-input" />
+        <select id="curve-selector" class="curve-selector"></select>
+    </div>
+    <div id="curve-info">
+      <h2 id="curve-title"></h2>
+      <p id="curve-description"></p>
+    </div>  
+    <div id="curves-container" class="curve-container"></div>
+  <h3>Source Code & Discussion</h3>
+    <p>
+      You can find the source code for this project on <a href="https://github.com/yourusername/nested-cosine-cheat-sheet" target="_blank">GitHub</a>.
+      Join the conversation and share your thoughts on the <a href="https://news.ycombinator.com/item?id=youritemID" target="_blank">Hacker News discussion thread</a>.
+    </p>
+      </div>
   </div>
     
-  <script>
-    const curve1 = {
-      func: (t, x) => Math.cos(t),
-      text: 'y = cos(t)',
-      description: 'A straight line oscillating up and down over time in a cosine movement.'
-    };
-    const curve2 = {
-      func: (t, x) => Math.cos(t + x),
-      text: 'y = cos(t + x)',
+<script>
+  const curves = [
+    {
+        text: 'cos(t)',
+        description: 'A straight line oscillating up and down over time in a cosine movement.'
+    },
+    {
+      text: 'cos(t + x)',
       description: 'A cosine curve that moves horizontally over time.'
-    };
-    const curve3 = {
-      func: (t, x) => Math.cos(Math.cos(t) + x),
-      text: 'y = cos(cos(t) + x)',
+    },
+    {
+      text: 'cos(cos(t) + x)',
       description: 'A cosine curve that accelerates and decelerates horizontally over time.'
-    };
-    const curve4 = {
-      func: (t, x) => Math.cos(t + Math.cos(x)),
-      text: 'y = cos(t + cos(x))',
+    },
+    {
+      text: 'cos(t + cos(x))',
       description: 'A cosine curve that moves vertically over time while retaining its shape.'
-    };
-    const curve5 = {
-      func: (t, x) => Math.cos(t+ Math.cos(t)*x),
-      text: 'y = cos(t + cos(t) * x)',
+    },
+    {
+      text: 'cos(t + cos(t) * x)',
       description: 'A complex waveform that evolves over time, with a varying frequency and amplitude.'
-    };
-    const curve6 = {
-      func: (t, x) => Math.cos(+ x * (1 + 1 * Math.cos(0.5 * x + t))),
-      text: 'y = cos(x * (1 + 1 * cos(0.5 * x + t)))',
+    },
+    {
+      text: 'cos(x * (1 + 1 * cos(0.5 * x + t)))',
       description: 'A cosine curve with a time-varying wavelength that repeats over the x-axis.'
-    };
+    },
+    {
+      text: 'cos(cos(t) * cos(x))',
+      description: 'A cosine curve that oscillates in amplitude with time.'
+    },
+    {
+      text: 'cos(t) * cos(x)',
+      description: 'A cosine curve formed by the product of two cosine functions, one dependent on time and the other on position.',
+    },
+    {
+      text: 'cos(x + t * cos(x))',
+      description: 'A cosine curve with a time-varying phase, which is modulated by another cosine function.'
+    },
+  ];
+</script>
 
-    const curves = [curve1, curve2, curve3, curve4, curve5, curve6];
-  </script>
+      
 </body>
 </html>
