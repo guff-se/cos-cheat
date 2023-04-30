@@ -94,3 +94,14 @@ p {
   color: #333;
   margin-right: 20px;
 }
+
+.chatgpt-message {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+}
