@@ -38,7 +38,9 @@ window.addEventListener('DOMContentLoaded', () => {
       if (event.key === 'Enter') {
         event.preventDefault(); // Prevent the default action (e.g., submitting a form)
         curves[selectedCurveIndex].func = createFunction(customFunctionInput.value);
+        updateCurveInfo();
       }
+        
     });
 
   customFunctionInput.value = curves[selectedCurveIndex].text;
